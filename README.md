@@ -14,16 +14,16 @@ The problems are organized by topic. Currently, the repository includes solution
 
 ## 🛠️ Tech Stack
 
-* **Language:** C++ (Standard 11/14/17/20)
-* **Compiler:** G++ / Clang
-* **IDE/Editor:** VS Code / CLion / Vim
+* **Language:** C++ (above 17)
+* **Compiler:** G++ 
+* **IDE/Editor:** VS Code
 
 ## 🚀 How to Run
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-    cd your-repo-name
+    git clone https://github.com/SouvikGhorui/Data-Structure-and-Algorithm-with-CPP.git
+    cd Data-Structure-and-Algorithm-with-CPP
     ```
 
 2.  **Navigate to a specific topic:**
@@ -52,7 +52,7 @@ The problems are organized by topic. Currently, the repository includes solution
 ## 👤 Author
 
 **Souvik Ghorui**
-* Student, IIT Jodhpur
+* M.Sc-M.Tech student, IIT Jodhpur
 
 ---
 *Disclaimer: These codes are for educational purposes and reference. Please adhere to the institute's academic integrity policy when referring to these solutions.*
