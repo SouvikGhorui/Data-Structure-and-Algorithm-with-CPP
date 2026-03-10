@@ -71,6 +71,5 @@ int main(){
     while(! s.isEmpty()){
         cout<<s.pop()<<endl;
     }
-
   return 0;
 }
