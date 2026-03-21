@@ -72,7 +72,7 @@ public:
             pop_front();
             return;
         }
-        while((temp->next->data !=x) &&(temp-> next !=NULL)){    
+        while((temp-> next !=NULL)&& (temp->next->data !=x) ){    
             temp = temp ->next;
         }
         if(temp->next ==NULL){

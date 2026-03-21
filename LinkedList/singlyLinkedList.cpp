@@ -89,8 +89,8 @@ public:
 
     void search(int val){ //O(n)
         Node* temp = head;
+        int count =0;
         while(temp !=NULL){
-            int count =0;
             if(temp->data ==val){
                 cout<<"Value is in the "<<count<<" th place"<<endl;
                 return;
