@@ -12,11 +12,12 @@ public :
         front = 0;
         rear = -1;
     }
+    
     bool isEmpty(){
         return (front == rear +1);
     }
     bool isFull(){
-        return (rear == capacity -1);
+        return (rear == capacity -1) && (front >0);
     }
     void enqueue(int val){
         if(rear == capacity -1 && front ==0){
@@ -25,11 +26,11 @@ public :
         }
         else if(rear == capacity-1 && front > 0){
             int totalEle = rear - front +1;
-            for(int i = 0; i<capacity; i++){
+            for(int i = 0; i<totalEle; i++){
                 arr[i] = arr[front +i];
             }
             front = 0;
-            rear = totalEle+1;
+            rear= totalEle;
             arr[rear] = val;
             cout<<"Enqueued: "<<val<<endl;
         }
