@@ -17,7 +17,7 @@ public :
         return (front == rear +1);
     }
     bool isFull(){
-        return (rear == capacity -1) && (front >0);
+        return (rear == capacity -1) && (front==0);
     }
     void enqueue(int val){
         if(rear == capacity -1 && front ==0){
