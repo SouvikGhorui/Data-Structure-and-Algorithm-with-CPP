@@ -110,13 +110,40 @@ int sumOfNodes(Node* root){
     return leftsum + rightsum + root->data;
 }
 
+// identical binary trees
+bool isIdentical(Node* p, Node* q){
+    if(p==NULL || q == NULL){
+        return p == q;
+    }
+    bool isLeftsame= isIdentical(p->left, q->left);
+    bool isRightsame = isIdentical(p->right, q->right);
+    return isLeftsame && isRightsame && (p->data == q-> data);
+}
+
+// subtree of another tree 
+bool isSubtree(Node* root, Node* subroot){
+    if(subroot == NULL) return true;
+    if(root == NULL) return false;
+    if(root->data == subroot->data && isIdentical(root, subroot)){
+        return true;
+    }
+    return (isSubtree(root->left, subroot) || isSubtree(root->right, subroot));
+}
+
 int main(){
-    vector<int> preorder = {1 ,2 ,-1 ,-1 , 3 , 4, -1, -1, 5, -1, -1};
-    Node* root = buildTree(preorder);
-    levelOrder(root);
-    cout<<"Height of the binary tree= " <<height(root)<<endl;
-    cout<<"Total number of nodes = "<<countNode(root)<<endl;
-    cout<<"Sum of nodes = "<< sumOfNodes(root)<< endl;
+    vector<int> p = {1 ,2 ,-1 ,-1 , 3 , 4, -1, -1, 5, -1, -1};
+    vector<int> q = {3 , 4, -1, -1, 5, -1, -1};
+    idx = -1;
+    Node* root1 = buildTree(p);
+    idx = -1;
+    Node* root2 = buildTree(q);
+    levelOrder(root1);
+    levelOrder(root2);
+    cout<<"Height of the binary tree= " <<height(root1)<<endl;
+    cout<<"Total number of nodes = "<<countNode(root1)<<endl;
+    cout<<"Sum of nodes = "<< sumOfNodes(root1)<< endl;
+    cout<<"Is the p and q trees are identical ? "<<boolalpha<< isIdentical(root1, root2)<<endl;
+    cout<< "is the p is a subtree of q ?"<< boolalpha << isSubtree(root1, root2);
 
     return 0;
 }
