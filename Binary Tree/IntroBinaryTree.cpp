@@ -84,10 +84,18 @@ void levelOrder(Node* root){
     cout<<endl;
 }
 
+int height(Node* root){
+    if(root == NULL) return 0;
+    int leftht = height(root -> left);
+    int rightht = height(root -> right);
+    return max(leftht, rightht)+1; 
+}
+
 
 int main(){
     vector<int> preorder = {1 ,2 ,-1 ,-1 , 3 , 4, -1, -1, 5, -1, -1};
     Node* root = buildTree(preorder);
     levelOrder(root);
+    cout<<"Height of the binary tree= " <<height(root)<<endl;
     return 0;
 }
