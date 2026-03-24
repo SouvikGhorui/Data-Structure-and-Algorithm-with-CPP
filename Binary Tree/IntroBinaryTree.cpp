@@ -84,6 +84,7 @@ void levelOrder(Node* root){
     cout<<endl;
 }
 
+// Height of tree
 int height(Node* root){
     if(root == NULL) return 0;
     int leftht = height(root -> left);
@@ -91,11 +92,31 @@ int height(Node* root){
     return max(leftht, rightht)+1; 
 }
 
+// Count Nodes 
+int countNode(Node* root){
+    if (root == NULL){
+        return 0;
+    }
+    int countLeft = countNode(root->left);
+    int countRight = countNode(root->right);
+    return countLeft + countRight + 1;
+}
+
+// sum of nodes 
+int sumOfNodes(Node* root){
+    if(root == NULL) return 0;
+    int leftsum = sumOfNodes(root-> left);
+    int rightsum = sumOfNodes(root-> right);
+    return leftsum + rightsum + root->data;
+}
 
 int main(){
     vector<int> preorder = {1 ,2 ,-1 ,-1 , 3 , 4, -1, -1, 5, -1, -1};
     Node* root = buildTree(preorder);
     levelOrder(root);
     cout<<"Height of the binary tree= " <<height(root)<<endl;
+    cout<<"Total number of nodes = "<<countNode(root)<<endl;
+    cout<<"Sum of nodes = "<< sumOfNodes(root)<< endl;
+
     return 0;
 }
