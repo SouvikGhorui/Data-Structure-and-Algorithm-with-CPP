@@ -55,5 +55,13 @@ public:
         return root;
     }
 
-    
+    bool searchRecursion(Node* root, int val){
+        if (root == NULL) return false;
+        if(root->data == val) return true;
+        
+        if(root-> data > val) 
+        searchRecursion(root->left, val);
+        else if (root->data < val)
+        searchRecursion(root->right,val);
+    }
 };
