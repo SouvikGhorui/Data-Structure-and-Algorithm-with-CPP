@@ -62,6 +62,11 @@ int searchNode(Node* root, int key){
 
 }
 
+void deleteEle(Node* root, int key){
+    
+}
+
+
 void preOrder(Node* root){
     if( root == NULL) return;
     cout<<root->val<<endl;
@@ -99,6 +104,7 @@ void levelOrder(Node* root){
     }
     cout<<endl;
 }
+
 
 
 int main(){
