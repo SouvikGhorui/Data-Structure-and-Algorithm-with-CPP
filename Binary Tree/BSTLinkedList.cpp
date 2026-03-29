@@ -82,4 +82,41 @@ public:
         }
         return false;
     }
+
+    Node* deleteNode(Node* root, int val){
+        if(root == NULL) return root;
+        if(root->data > val){
+            root->left = deleteNode(root->left, val);
+        }
+        else if (root->data < val){
+            root->right = deleteNode(root->right, val);
+        }
+        else{
+            // case 1: no child or 1 child
+            if(root ->left == NULL){
+                Node* temp = root->right;
+                delete root;
+                return temp;
+            }
+            if(root-> right == NULL){
+                Node* temp = root->left;
+                delete root;
+                return temp;
+            }
+
+            Node* succ = getSuccesor(root);
+            root->data = succ->data;
+            root->right = deleteNode(root->right, succ->data);
+        }
+        return root;
+    }
+// get the smallest element in the right sub tree
+    Node* getSuccesor(Node* root){
+        Node* curr = root->right;
+        while(curr->left!=NULL){
+            curr = curr ->left;
+        }
+        return curr;
+
+    }
 };
