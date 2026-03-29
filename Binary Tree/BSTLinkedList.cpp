@@ -64,4 +64,22 @@ public:
         else if (root->data < val)
         searchRecursion(root->right,val);
     }
+
+    bool search(Node* root, int val){
+        if(root == NULL) return false;
+        
+        while(root != NULL){
+            if(root-> data == val){
+                return true;
+            }
+            else if(root->data > val){
+                root = root-> left;
+            }
+            else if (root ->data < val){
+                root = root->right;
+            }
+
+        }
+        return false;
+    }
 };
