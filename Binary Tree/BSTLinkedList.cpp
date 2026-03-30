@@ -119,4 +119,29 @@ public:
         return curr;
 
     }
+
+    // left root right
+    void inorder(Node* root){
+        if(root == NULL) return;
+        inorder(root->left);
+        cout<<root->data<< endl;
+        inorder(root->right);
+    }
+// root left right
+    void preorder(Node* root){
+        if(root == NULL) return;
+        cout<< root->data<< endl;
+        preorder(root->left);
+        preorder(root->right);
+    }
+
+    // post order : left right root
+    void postorder(Node* root){
+        if(root == NULL) return;
+        postorder(root->left);
+        postorder(root->right);
+        cout<<root->data<< endl;
+    }
+
+    
 };
