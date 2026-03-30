@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 class Node{
 public:
@@ -141,6 +142,46 @@ public:
         postorder(root->left);
         postorder(root->right);
         cout<<root->data<< endl;
+    }
+
+    // level order traversal
+    Node* levelorder(Node* root){
+        queue<Node*> q;
+        q.push(root);
+        q.push(NULL);
+        while( q.size()>0 ){
+            Node* curr = q.front();
+            q.pop();
+            if(curr == NULL){
+                if(!q.empty()){
+                    cout<<endl;
+                    q.push(NULL);
+                    continue;
+                }
+            }
+            cout<<curr->data<<" ";
+            if(root->left != NULL){
+                q.push(root->left);
+            }
+            if(root->right != NULL){
+                q.push(root->right);
+            }
+        }
+        return root;
+
+    }
+
+    int height(Node* root){
+        if(root== NULL ) return 0;
+        int leftHeight = height(root->left);
+        int rightHeight = height(root->right);
+        return max(leftHeight, rightHeight) +1;
+    }
+    int countNode(Node* root){
+        if(root == NULL) return 0;
+        int countLeft = countNode(root->left);
+        int countRight = countNode(root->right);
+        return countLeft + countRight +1;
     }
 
     
