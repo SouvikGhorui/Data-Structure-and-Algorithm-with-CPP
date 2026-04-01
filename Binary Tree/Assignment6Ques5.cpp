@@ -62,8 +62,45 @@ int searchNode(Node* root, int key){
 
 }
 
-void deleteEle(Node* root, int key){
-    
+Node* deleteEle(Node* root, int key){
+    if(root == NULL){
+        return root;
+    }
+    if(root->val >key){
+        root->left = deleteEle(root->left, key);
+    }
+    else if(root->val <key){
+        root->right = deleteEle(root->right, key);
+    }
+    else{
+        if(root->left == NULL){
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        }
+        if(root->right == NULL){
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+        Node* succ = getSuccessor(root);
+        root->val = succ->val;
+        root ->right = deleteEle(root->right, succ->val);
+
+    }
+    return root;
+}
+
+// returns smallest element of the right sub tree
+Node* getSuccessor(Node* root){
+    if(root == NULL){
+        return root;
+    }
+    Node* curr = root->right;
+    while(curr->left != NULL){
+        curr = curr->left;
+    }
+    return curr;
 }
 
 
