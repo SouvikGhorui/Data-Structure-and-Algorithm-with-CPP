@@ -25,6 +25,7 @@ public:
             cout<<"Bacche ki jaan lega kya!!?.. underflow he"<<endl;
             return;
         }
+        arr[top] = -1;
         top = top-1;
         
     }
