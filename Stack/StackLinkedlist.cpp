@@ -25,8 +25,7 @@ public:
         else{
             newNode->next = top;
             top = newNode;
-        }
-        
+        }   
     }
 
     void pop(){

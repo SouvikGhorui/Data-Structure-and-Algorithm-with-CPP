@@ -62,7 +62,8 @@ public:
         if (rear >= front) {
             return rear - front + 1;
         } else {
-            return (capacity - front) + (rear + 1);
+            // return (capacity - front) + (rear + 1);
+            return capacity +(rear - front +1);
         }
     }
     void show(){

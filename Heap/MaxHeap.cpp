@@ -27,24 +27,35 @@ class heap{
 
     }
 
-    void deletefromHeap(){
+    void deletefromHeap() {
+        if (size == 0) return; // Cannot delete from empty heap
+
+        // 1. Replace root with last element
         arr[1] = arr[size];
         size--;
 
-        // take the value to its correct location
+        // 2. Propagate the element down to its correct position
         int i = 1;
-        while(i<size){
-            int Leftsize = 2*i;
-            int Rightsize = 2*i+1;
-            if(arr[Leftsize]>arr[i] && Leftsize <size){
-                swap(arr[i], arr[Leftsize]);
-                i = Leftsize;
+        while (true) {
+            int leftIndex = 2 * i;
+            int rightIndex = 2 * i + 1;
+            int largest = i;
+
+            // Check if left child exists and is larger than current
+            if (leftIndex <= size && arr[leftIndex] > arr[largest]) {
+                largest = leftIndex;
             }
-            else if( arr[Rightsize] > arr[i] && Rightsize < size){
-                swap(arr[i], arr[Rightsize]);
-                i = Rightsize;
+
+            // Check if right child exists and is larger than the largest so far
+            if (rightIndex <= size && arr[rightIndex] > arr[largest]) {
+                largest = rightIndex;
             }
-            else{
+
+            // If the largest is still i, the heap property is restored
+            if (largest != i) {
+                swap(arr[i], arr[largest]);
+                i = largest;
+            } else {
                 return;
             }
         }
