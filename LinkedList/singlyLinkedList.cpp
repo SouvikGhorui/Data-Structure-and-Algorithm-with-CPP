@@ -87,6 +87,30 @@ public:
         }
     }
 
+    void Deletemiddle(int pos){
+        if(head == NULL){
+            return;
+        }
+        if(pos==0){
+            pop_front();
+            return;
+        }
+        Node* temp = head;
+        for(int i = 0; i< pos -1; i ++){
+            if(temp == NULL || temp->next ==NULL){
+                return;
+            }
+            temp = temp->next;
+        }
+        Node* toDelete = temp->next;
+        if(toDelete == tail){
+            tail = temp;  
+        }
+        temp->next = toDelete->next;
+        toDelete->next = NULL;
+        delete toDelete;
+    }
+
     void search(int val){ //O(n)
         Node* temp = head;
         int count =0;
