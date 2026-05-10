@@ -8,7 +8,7 @@ The problems are organized by topic. The repository includes comprehensive solut
 
 * **Linked Lists** (Singly, Doubly, Circular)
 * **Stacks** (Array and Linked List implementations, applications)
-* **Queues** (Simple, Circular, Deque)
+* **Queues** (Array and Linked List implementations, Circular Queue)
 * **Binary Trees** (Basic operations, BST, and Assignments)
 * **Heaps** (Max Heap implementation)
 
