@@ -1,16 +1,16 @@
 # Data Structure and Algorithm with CPP 
 
-This repository contains my solutions to Data Structures and Algorithms (DSA) assignment problems given during the coursework at **IIT Jodhpur**. All implementations are written in **C++**.
+This repository contains my complete solutions to Data Structures and Algorithms (DSA) assignment problems given during the coursework at **IIT Jodhpur**. All implementations are written in **C++**.
 
 ## 📂 Repository Structure
 
-The problems are organized by topic. Currently, the repository includes solutions for:
+The problems are organized by topic. The repository includes comprehensive solutions for:
 
 * **Linked Lists** (Singly, Doubly, Circular)
 * **Stacks** (Array and Linked List implementations, applications)
 * **Queues** (Simple, Circular, Deque)
-
-*> Note: This repository is actively updated as the course progresses. More topics like Trees, Graphs, and Dynamic Programming will be added soon.*
+* **Binary Trees** (Basic operations, BST, and Assignments)
+* **Heaps** (Max Heap implementation)
 
 ## 🛠️ Tech Stack
 
@@ -28,7 +28,7 @@ The problems are organized by topic. Currently, the repository includes solution
 
 2.  **Navigate to a specific topic:**
     ```bash
-    cd "Linked Lists"
+    cd LinkedList  # or Stack, Queue, "Binary Tree", Heap
     ```
 
 3.  **Compile and run a specific problem:**
@@ -37,17 +37,13 @@ The problems are organized by topic. Currently, the repository includes solution
     ./output
     ```
 
-## 📝 Topics Roadmap
+## 📝 Course Roadmap (Completed)
 
 - [x] Linked Lists
 - [x] Stacks
 - [x] Queues
-- [ ] Recursion
-- [ ] Trees (Binary Trees, BST, AVL)
-- [ ] Heaps & Priority Queues
-- [ ] Hashing
-- [ ] Graphs
-- [ ] Dynamic Programming
+- [x] Binary Trees
+- [x] Heaps & Priority Queues
 
 ## 👤 Author
 
